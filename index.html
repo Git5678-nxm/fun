@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimus Roast Station</title>
+    <title>The Ultimate Roast Station</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
-        /* Dark Edgy Theme */
         body {
             background-color: #050505;
-            color: #00ff41; /* Hacker Green */
-            font-family: 'Courier New', Courier, monospace;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,127 +22,154 @@
 
         .container {
             text-align: center;
-            border: 2px solid #ff003c; /* Neon Red */
+            border: 3px solid #ff003c;
             padding: 40px;
-            box-shadow: 0 0 25px #ff003c, inset 0 0 10px #ff003c;
-            background: rgba(10, 10, 10, 0.9);
+            box-shadow: 0 0 30px #ff003c, inset 0 0 15px #ff003c;
+            background: rgba(10, 10, 10, 0.95);
             max-width: 90%;
             width: 500px;
-            z-index: 2;
+            position: relative;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #ff003c;
             text-shadow: 3px 3px #000;
             margin-bottom: 20px;
-            animation: glitch 1s linear infinite;
+            animation: glitch 1.5s linear infinite;
         }
 
         @keyframes glitch {
-            2%, 64% { transform: translate(2px, 0) skew(0deg); }
-            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
-            62% { transform: translate(0, 0) skew(5deg); }
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
         }
 
         #roastText {
-            font-size: 1.2rem;
-            min-height: 50px;
-            margin-bottom: 25px;
+            font-size: 1.3rem;
+            min-height: 70px;
+            margin-bottom: 30px;
             color: #fff;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
         button {
             background: transparent;
             color: #ff003c;
             border: 2px solid #ff003c;
-            padding: 15px 30px;
-            font-size: 1rem;
+            padding: 18px 35px;
+            font-size: 1.1rem;
             cursor: pointer;
             font-weight: bold;
             transition: 0.4s;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         button:hover {
             background: #ff003c;
             color: #000;
-            box-shadow: 0 0 40px #ff003c;
+            box-shadow: 0 0 50px #ff003c;
         }
 
-        /* Optimus Image Styling */
         #optimusImage {
             margin-top: 30px;
             width: 100%;
-            max-width: 350px;
+            max-width: 380px;
             border: 2px solid #fff;
-            display: none; /* Starting mein chhupa rahega */
-            filter: drop-shadow(0 0 20px #ff003c);
-            animation: fadeIn 1.5s ease-in-out;
+            display: none; 
+            filter: drop-shadow(0 0 25px #ff003c);
+            animation: powerUp 1s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes powerUp {
+            from { opacity: 0; filter: brightness(5); transform: scale(0.9); }
+            to { opacity: 1; filter: brightness(1); transform: scale(1); }
         }
 
         footer {
-            margin-top: 20px;
-            font-size: 0.7rem;
-            color: #444;
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: #555;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1 class="glitch">SYSTEM SCANNER v1.0</h1>
-        <p id="roastText">Ready to be destroyed?</p>
+        <h1 class="glitch">BRAIN SCANNER v9.0</h1>
+        <p id="roastText">SYSTEM STATUS: SEARCHING FOR INTELLIGENCE...</p>
         
-        <button onclick="generateRoast()">ACTIVATE ROAST</button>
+        <button onclick="activateSystem()">ACTIVATE DESTRUCTION</button>
         
         <br>
-        <img id="optimusImage" src="https://github.com/Git5678-nxm/fun/blob/main/6e3f37b7a3e30aa8bde8c9ddf520f6ac.jpg" alt="Optimus Prime">
+        <img id="optimusImage" src="IMAGE_URL_YAHAN_DALO" alt="Optimus Prime">
     </div>
 
-    <footer>Status: Scanning for low IQ lifeforms...</footer>
+    <footer>ALERT: HIGH LEVELS OF STUPIDITY DETECTED</footer>
 
     <script>
-        function generateRoast() {
+        function activateSystem() {
             const roasts = [
                 "Tumhara dimaag bilkul naya hai, kabhi use jo nahi kiya!",
-                "Tumhe dekh kar lagta hai ki 'Common Sense' itna common nahi hai.",
-                "Tumhara logic sun kar mera Wi-Fi bhi disconnect ho gaya.",
-                "Agar tumhari IQ ko 2 se multiply karein, toh bhi answer 0 hi aayega.",
                 "Error 404: Brain not found in your system.",
-                "Tumhari baatein sun kar lagta hai ki Google ko bhi ek 'Dislike' button bana dena chahiye.",
-                "Tumhe samjhana matlab diwaar se sir takrana.",
+                "Tumhe NASA bhejna chahiye, research ke liye ki bina dimaag ke kaise jeete hain.",
+                "Jab bhagwan dimaag baant rahe the, tab tum 'Selfie' lene mein busy the.",
+                "Tumhare logic ke hisaab se toh 2+2 bhi 'Machhli' hota hoga.",
+                "Evolution tumhare darwaje par aakar wapas laut gaya!",
+                "Itna confidence? Itni bewakoofi ke baad bhi muskura rahe ho!",
+                "Tumhari baatein sun kar lagta hai ki tumhare dimaag mein Windows 95 chal raha hai.",
+                "Agar 'Over-acting' ke paise milte, toh aaj tum Ambani ke padosi hote.",
+                "Tumhari IQ itni niche hai ki use dhundne ke liye kuan khodna padega.",
                 "Optimus Prime bhi tumhe lead nahi kar sakta, itne khoke ho tum!",
-                "Tumhare jokes par toh ab GST bhi nahi lagta, itne saste hain."
-    "Tumhara dimaag bilkul naya hai, kabhi use jo nahi kiya!",
-    "Tumhe dekh kar lagta hai ki 'Common Sense' itna common nahi hai.",
-    "Tumhara logic sun kar mera Wi-Fi bhi disconnect ho gaya.",
-    "Error 404: Brain not found in your system.",
-    "Tumhe NASA bhejna chahiye, research ke liye ki bina dimaag ke kaise jeete hain.",
-    "Jab bhagwan dimaag baant rahe the, tab tum 'Selfie' lene mein busy the.",
-    "Tumhare logic ke hisaab se toh 2+2 bhi 'Machhli' hota hoga.",
-    "Evolution tumhare darwaje par aakar wapas laut gaya!",
-    "Itna confidence? Itni bewakoofi ke baad bhi muskura rahe ho!",
-    "Tumhare dimaag mein sirf Windows 95 ka screensaver chal raha hai."
-];
+                "Tumhare jokes par toh ab GST bhi nahi lagta, itne saste hain.",
+                "Main tumse behes karta, par mujhe lagta hai tum haarne mein zyada mahir ho."
+            ];
 
             const textElement = document.getElementById("roastText");
             const imageElement = document.getElementById("optimusImage");
             
             const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
             
-            // Text change with effect
-            textElement.style.color = "#ff003c";
+            // Text Update
             textElement.innerText = randomRoast;
+            textElement.style.color = "#ff003c";
 
-            // Image show karein
+            // Show Image
             imageElement.style.display = "inline-block";
+
+            // Emoji Explosion (Confetti)
+            var end = Date.now() + (1 * 1000);
+            var emojis = ['🤡', '💩', '💀', '👽', '🚫', '📉'];
+
+            (function frame() {
+              confetti({
+                particleCount: 3,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                shapes: ['circle'],
+                colors: ['#ff003c', '#ffffff'],
+                scalar: 2
+              });
+              confetti({
+                particleCount: 3,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                shapes: ['circle'],
+                colors: ['#ff003c', '#ffffff'],
+                scalar: 2
+              });
+
+              if (Date.now() < end) {
+                requestAnimationFrame(frame);
+              }
+            }());
         }
     </script>
 </body>
