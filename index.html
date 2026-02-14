@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Burn Station</title>
+    <style>
+        /* Edgy Dark Theme Design */
+        body {
+            background-color: #0a0a0a;
+            color: #00ff41; /* Hacker Green */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #ff003c; /* Neon Red Border */
+            padding: 40px;
+            box-shadow: 0 0 20px #ff003c, inset 0 0 10px #ff003c;
+            background: rgba(20, 20, 20, 0.9);
+            max-width: 80%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff003c;
+            text-shadow: 2px 2px #000;
+            margin-bottom: 20px;
+        }
+
+        #roastText {
+            font-size: 1.2rem;
+            min-height: 60px;
+            margin-bottom: 30px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        button {
+            background: transparent;
+            color: #ff003c;
+            border: 1px solid #ff003c;
+            padding: 15px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background: #ff003c;
+            color: #000;
+            box-shadow: 0 0 30px #ff003c;
+        }
+
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="glitch">SYSTEM ERROR: BEWAKOOF FOUND</h1>
+        <p id="roastText">Ready for the truth? Click if you dare.</p>
+        <button onclick="generateRoast()">Destroy Me</button>
+    </div>
+
+    <script>
+        function generateRoast() {
+            const roasts = [
+                "Tumhara dimaag bilkul naya hai, kabhi use jo nahi kiya!",
+                "Tumhe dekh kar lagta hai ki 'Common Sense' itna common nahi hai.",
+                "Tumhara logic sun kar mera Wi-Fi bhi disconnect ho gaya.",
+                "Agar tumhari IQ ko 2 se multiply karein, toh bhi answer 0 hi aayega.",
+                "Tumhare paas dimaag toh hai, par wo abhi tak 'Packaging' mein hi band hai.",
+                "Main tumse behes karta, par mujhe lagta hai tum haarne mein zyada mahir ho.",
+                "Tumhari memory goldfish se bhi kam hai, abhi kya bola tha yaad hai?",
+                "Tumhe samjhana matlab 'Wall' se sir takrana... nuksaan mera hi hoga.",
+                "Error 404: Brain not found in your system.",
+                "Tumhari baatein sun kar lagta hai ki Google ko bhi ek 'Dislike' button bana dena chahiye."
+            ];
+
+            const textElement = document.getElementById("roastText");
+            const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
+            
+            // Adding a small flicker effect when text changes
+            textElement.style.opacity = 0;
+            setTimeout(() => {
+                textElement.innerText = randomRoast;
+                textElement.style.opacity = 1;
+            }, 100);
+        }
+    </script>
+</body>
+</html>
